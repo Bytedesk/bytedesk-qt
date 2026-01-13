@@ -6,6 +6,8 @@
 [![C++](https://img.shields.io/badge/C++-17-00599C?logo=c%2B%2B)](https://en.cppreference.com/w/C++17)
 [![License](https://img.shields.io/badge/License-BSL--1.1-blue)](LICENSE)
 
+**语言 / Language:** [中文](README.zh.md) | [English](README.md)
+
 ---
 
 ## ✨ 特性
