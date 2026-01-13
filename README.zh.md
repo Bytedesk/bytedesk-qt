@@ -1,4 +1,4 @@
-# 微语 Qt 客户端
+# ByteDesk Qt 客户端
 
 > 基于 C++ + Qt + MQTT 实现的跨平台即时通讯客户端
 
@@ -36,6 +36,111 @@ qmake bytedesk.pro && make
 ./build.sh
 ```
 
+### 使用 Qt Creator（推荐）
+
+Qt Creator 提供最佳的开发体验，包括语法高亮、代码补全和集成调试器。
+
+#### 步骤 1: 安装 Qt Creator
+
+1. 从 [qt.io](https://www.qt.io/download) 下载 Qt Creator
+2. 安装 Qt 6.10 或更高版本
+3. 确保包含以下组件：
+   - Qt Creator IDE
+   - Qt 6.x (桌面编译器)
+   - CMake/qmake 构建工具
+
+#### 步骤 2: 打开项目
+
+1. 启动 Qt Creator
+2. 点击 **文件 → 打开文件或项目** (或按 Ctrl+O)
+3. 导航到项目目录
+4. 选择 `bytedesk.pro` 文件
+5. 点击 **打开**
+
+#### 步骤 3: 配置构建套件 (Kit)
+
+在 **配置项目** 界面：
+
+1. **选择套件**：为您的平台选择合适的 Qt Kit
+   - **Desktop Qt 6.10.x clang 64bit** (macOS)
+   - **Desktop Qt 6.10.x MinGW 64-bit** (Windows)
+   - **Desktop Qt 6.10.x GCC 64bit** (Linux)
+
+2. **配置设置** (如果需要)：
+   - 点击左侧边栏的 **项目** 按钮
+   - 选择 **构建与运行**
+   - 验证构建目录：`../build-bytedesk-Desktop_Qt_6-Debug`
+   - 根据需要调整
+
+3. 点击 **配置项目**
+
+#### 步骤 4: 构建项目
+
+1. 点击左下角的 **构建** 图标 (锤子) 或按 **Ctrl+B**
+2. 观察底部的 **编译输出** 面板
+3. 等待构建完成 (应显示 "Elapsed time: xx:xx")
+
+**构建状态：**
+- ✅ 绿色对勾：构建成功
+- ❌ 红色叉：构建失败 (检查编译输出中的错误)
+
+#### 步骤 5: 运行应用程序
+
+1. 点击 **运行** 按钮 (绿色播放图标) 或按 **Ctrl+R**
+2. 应用程序窗口将出现
+3. 查看 **应用程序输出** 面板获取运行时日志
+
+#### Qt Creator 使用技巧
+
+**键盘快捷键：**
+- `Ctrl+B` - 构建项目
+- `Ctrl+R` - 运行应用程序
+- `Ctrl+.` - 跳转到光标下的符号
+- `F2` - 跳转到定义
+- `Shift+F2` - 在头文件和源文件间切换
+- `Ctrl+K` - 在文件中搜索
+- `Ctrl+Shift+F` - 在所有文件中搜索
+- `Ctrl+L` - 跳转到指定行
+- `Ctrl+/` - 注释/取消注释选中内容
+
+**实用功能：**
+- **自动补全**：输入时按 `Tab` 或 `Ctrl+Space`
+- **代码导航**：按住 `Ctrl` + 点击函数/类跳转
+- **分屏视图**：右键标签页 → **在新拆分中打开**
+- **书签**：右键行号 → **切换书签**
+- **任务**：`// TODO: 修复这个` 会出现在任务面板
+
+**调试：**
+1. 点击 **调试** 按钮 (虫子图标) 或按 **F5**
+2. 点击行号设置断点 (出现红点)
+3. 使用调试控制：
+   - **F10** - 单步跳过
+   - **F11** - 单步进入
+   - **Shift+F11** - 单步跳出
+   - **F5** - 继续
+
+#### Qt Creator 故障排除
+
+**问题：找不到有效的 Kit**
+- 解决方案：打开 **工具 → 选项 → Kits**
+- 添加 Qt 版本：**Qt Versions → 添加** → 选择 qmake
+- 添加编译器：**Compilers → 添加** → 自动检测或手动
+- 创建 Kit：**Kits → 添加** → 选择 Qt 版本和编译器
+
+**问题：构建错误但没有输出**
+- 解决方案：点击 **窗口 → 输出面板 → 编译输出**
+- 检查 **常规 → 消息** 查看警告
+
+**问题：无法运行应用程序**
+- 解决方案：转到 **项目 → 运行**
+- 检查 **可执行文件** 字段指向正确的二进制文件
+- **运行 → 环境** - 如需要添加环境变量
+
+**问题：代码补全不工作**
+- 解决方案：**工具 → 选项 → C++ → 代码模型**
+- 点击 **重置代码模型**
+- 重启 Qt Creator
+
 ### 系统要求
 
 - **Qt 6.10+**
@@ -60,9 +165,9 @@ qmake bytedesk.pro && make
 ├──────────────┬───────────────────────────┤
 │ 会话列表      │ 聊天窗口                  │
 │              │                            │
-│ □ 会话1     │ [10:30] 张三: 你好！      │
-│ □ 会话2     │ [10:31] 我: 你好啊        │
-│ □ 会话3     │                            │
+│ ☐ 会话1     │ [10:30] 张三: 你好！      │
+│ ☐ 会话2     │ [10:31] 我: 你好啊        │
+│ ☐ 会话3     │                            │
 │              │ [输入消息.......] [发送]  │
 ├──────────────┴───────────────────────────┤
 │ 状态: 欢迎使用微语Qt客户端 - 请登录      │
@@ -137,7 +242,7 @@ qt/
 #include "core/auth/authmanager.h"
 
 // 配置服务器
-BYTDESK_CONFIG->setApiUrl("https://api.bytedesk.com");
+BYTDESK_CONFIG->setApiUrl("https://api.weiyuai.cn");
 
 // 创建HTTP客户端
 HttpClient* httpClient = new HttpClient(this);
@@ -299,8 +404,8 @@ export PATH=$PATH:~/Qt/6.10.1/macos/bin
 
 - **Desktop版本**: [ByteDesk Desktop](../../frontend/apps/desktop) - Electron + React 版本
 - **后端API**: [ByteDesk Backend](../../starter) - Java Spring Boot
-- **官网**: https://www.bytedesk.com
-- **文档**: https://docs.bytedesk.com
+- **官网**: https://www.weiyuai.cn
+- **文档**: https://www.weiyuai.cn/docs/zh-CN/
 
 ---
 
@@ -325,6 +430,6 @@ Business Source License 1.1
 
 **Made with ❤️ by ByteDesk**
 
-[官网](https://www.bytedesk.com) • [文档](https://docs.bytedesk.com) • [GitHub](https://github.com/bytedesk)
+[官网](https://www.weiyuai.cn) • [文档](https://www.weiyuai.cn/docs/zh-CN/) • [GitHub](https://github.com/bytedesk)
 
 </div>

@@ -36,6 +36,111 @@ qmake bytedesk.pro && make
 ./build.sh
 ```
 
+### Using Qt Creator (Recommended)
+
+Qt Creator provides the best development experience with syntax highlighting, code completion, and integrated debugging.
+
+#### Step 1: Install Qt Creator
+
+1. Download Qt Creator from [qt.io](https://www.qt.io/download)
+2. Install Qt 6.10 or later
+3. Make sure to include these components:
+   - Qt Creator IDE
+   - Qt 6.x (Desktop compilers)
+   - CMake/qmake build tools
+
+#### Step 2: Open Project
+
+1. Launch Qt Creator
+2. Click **File → Open File or Project** (or press Ctrl+O)
+3. Navigate to the project directory
+4. Select `bytedesk.pro` file
+5. Click **Open**
+
+#### Step 3: Configure Build Kit
+
+On the **Configure Project** screen:
+
+1. **Select Kit**: Choose the appropriate Qt Kit for your platform
+   - **Desktop Qt 6.10.x clang 64bit** (macOS)
+   - **Desktop Qt 6.10.x MinGW 64-bit** (Windows)
+   - **Desktop Qt 6.10.x GCC 64bit** (Linux)
+
+2. **Configure Settings** (if needed):
+   - Click **Projects** button on left sidebar
+   - Select **Build & Run**
+   - Verify build directory: `../build-bytedesk-Desktop_Qt_6-Debug`
+   - Adjust if necessary
+
+3. Click **Configure Project**
+
+#### Step 4: Build the Project
+
+1. Click the **Build** icon (hammer) in bottom-left corner (or press Ctrl+B)
+2. Watch the **Compile Output** panel at the bottom
+3. Wait for build to complete (should show "Elapsed time: xx:xx")
+
+**Build Status:**
+- ✅ Green checkmark: Build successful
+- ❌ Red X: Build failed (check errors in Compile Output)
+
+#### Step 5: Run the Application
+
+1. Click the **Run** button (green play icon) or press **Ctrl+R**
+2. The application window will appear
+3. Check the **Application Output** panel for runtime logs
+
+#### Qt Creator Tips
+
+**Keyboard Shortcuts:**
+- `Ctrl+B` - Build project
+- `Ctrl+R` - Run application
+- `Ctrl+.` - Follow symbol under cursor
+- `F2` - Jump to definition
+- `Shift+F2` - Switch between header and source
+- `Ctrl+K` - Search in file
+- `Ctrl+Shift+F` - Search in all files
+- `Ctrl+L` - Go to line
+- `Ctrl+/` - Comment/uncomment selection
+
+**Useful Features:**
+- **Auto-completion**: Press `Tab` or `Ctrl+Space` while typing
+- **Code Navigation**: Hold `Ctrl` + click on function/class to jump
+- **Split View**: Right-click tab → **Open in New Split**
+- **Bookmarks**: Right-click line number → **Toggle Bookmark**
+- **Tasks**: `// TODO: fix this` appears in Tasks panel
+
+**Debugging:**
+1. Click **Debug** button (bug icon) or press **F5**
+2. Set breakpoints by clicking line number (red dot appears)
+3. Use debug controls:
+   - **F10** - Step over
+   - **F11** - Step into
+   - **Shift+F11** - Step out
+   - **F5** - Continue
+
+#### Troubleshooting Qt Creator
+
+**Problem: "No valid Kit found"**
+- Solution: Open **Tools → Options → Kits**
+- Add Qt version: **Qt Versions → Add** → Select qmake
+- Add compiler: **Compilers → Add** → Auto-detected or manual
+- Create Kit: **Kits → Add** → Select Qt version and compiler
+
+**Problem: Build errors but no output**
+- Solution: Click **Window → Output Panes → Compile Output**
+- Check **General → Messages** for warnings
+
+**Problem: Cannot run application**
+- Solution: Go to **Projects → Run**
+- Check **Executable** field points to correct binary
+- **Run → Environment** - add needed variables if required
+
+**Problem: Code completion not working**
+- Solution: **Tools → Options → C++ → Code Model**
+- Click **Reset Code Model**
+- Restart Qt Creator
+
 ### System Requirements
 
 - **Qt 6.10+**
