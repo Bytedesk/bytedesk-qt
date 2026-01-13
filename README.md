@@ -92,57 +92,6 @@ On the **Configure Project** screen:
 2. The application window will appear
 3. Check the **Application Output** panel for runtime logs
 
-#### Qt Creator Tips
-
-**Keyboard Shortcuts:**
-- `Ctrl+B` - Build project
-- `Ctrl+R` - Run application
-- `Ctrl+.` - Follow symbol under cursor
-- `F2` - Jump to definition
-- `Shift+F2` - Switch between header and source
-- `Ctrl+K` - Search in file
-- `Ctrl+Shift+F` - Search in all files
-- `Ctrl+L` - Go to line
-- `Ctrl+/` - Comment/uncomment selection
-
-**Useful Features:**
-- **Auto-completion**: Press `Tab` or `Ctrl+Space` while typing
-- **Code Navigation**: Hold `Ctrl` + click on function/class to jump
-- **Split View**: Right-click tab → **Open in New Split**
-- **Bookmarks**: Right-click line number → **Toggle Bookmark**
-- **Tasks**: `// TODO: fix this` appears in Tasks panel
-
-**Debugging:**
-1. Click **Debug** button (bug icon) or press **F5**
-2. Set breakpoints by clicking line number (red dot appears)
-3. Use debug controls:
-   - **F10** - Step over
-   - **F11** - Step into
-   - **Shift+F11** - Step out
-   - **F5** - Continue
-
-#### Troubleshooting Qt Creator
-
-**Problem: "No valid Kit found"**
-- Solution: Open **Tools → Options → Kits**
-- Add Qt version: **Qt Versions → Add** → Select qmake
-- Add compiler: **Compilers → Add** → Auto-detected or manual
-- Create Kit: **Kits → Add** → Select Qt version and compiler
-
-**Problem: Build errors but no output**
-- Solution: Click **Window → Output Panes → Compile Output**
-- Check **General → Messages** for warnings
-
-**Problem: Cannot run application**
-- Solution: Go to **Projects → Run**
-- Check **Executable** field points to correct binary
-- **Run → Environment** - add needed variables if required
-
-**Problem: Code completion not working**
-- Solution: **Tools → Options → C++ → Code Model**
-- Click **Reset Code Model**
-- Restart Qt Creator
-
 ### System Requirements
 
 - **Qt 6.10+**
